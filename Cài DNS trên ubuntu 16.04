@@ -85,7 +85,7 @@ vi /etc/bind/zones/db.20.168.192
 	; name servers - NS records
 	      IN      NS      ns1.huucuong.vn.
 	; PTR Records
-	130   IN      PTR     ns1.huucuong.vn.    ; 192.168.20.100
-	131 IN      PTR     host.huucuong.vn.  ; 192.168.20.1
+	100   IN      PTR     ns1.huucuong.vn.    ; 192.168.20.100
+	1     IN      PTR     host.huucuong.vn.  ; 192.168.20.1
 
 
