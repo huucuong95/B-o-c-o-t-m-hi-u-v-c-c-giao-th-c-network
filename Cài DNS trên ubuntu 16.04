@@ -3,7 +3,8 @@
 sudo apt-get update
 sudo apt-get install bind9 bind9utils bind9-doc
 **Bước 2:** cài đặt file /etc/bind/named.conf.options và /etc/bind/named.conf.local
-	
+vi /etc/bind/named.conf.options
+
 	 options {
    		 directory "/var/cache/bind";
    		 additional-from-auth no;
@@ -27,7 +28,7 @@ sudo apt-get install bind9 bind9utils bind9-doc
    		 listen-on-v6 { any; };
 	};
 	
-sudo nano /etc/bind/named.conf.local	
+vi /etc/bind/named.conf.local	
 	
 	zone "huucuong.vn" {
  	type slave;
