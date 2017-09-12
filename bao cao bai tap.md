@@ -1,5 +1,5 @@
-#Báo cáo bài tập
-##I, DHCP
+<h1>Báo cáo bài tập</h1>
+<h2>I, DHCP</h2>
 ###1, Định nghĩa
 Dynamic Host Configuration Protocol (DHCP - giao thức cấu hình động máy chủ) là một giao thức cho phép cấp phát địa chỉ IP một cách tự động cùng với các cấu hình liên quan khác như subnet mark và gateway mặc định. Máy tính được cấu hình một cách tự động vì thế sẽ giảm việc can thiệp vào hệ thống mạng. Nó cung cấp một database trung tâm để theo dõi tất cả các máy tính trong hệ thống mạng. Mục đích quan trọng nhất là tránh trường hợp hai máy tính khác nhau lại có cùng địa chỉ IP.
 ###2, Nguyên tắc hoạt động
