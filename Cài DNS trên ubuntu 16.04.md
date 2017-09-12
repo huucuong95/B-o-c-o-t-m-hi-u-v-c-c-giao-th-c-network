@@ -1,7 +1,9 @@
 #Cài DNS trên ubuntu 16.04
+
 **Bước 1:** update và cài đặt bind9
-sudo apt-get update
-sudo apt-get install bind9 bind9utils bind9-doc
+
+	sudo apt-get update
+	sudo apt-get install bind9 bind9utils bind9-doc
 **Bước 2:** cài đặt file /etc/bind/named.conf.options
 	
 	 options {
