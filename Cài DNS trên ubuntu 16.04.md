@@ -1,4 +1,4 @@
-#Cài DNS trên ubuntu 16.04
+<h1>Cài DNS trên ubuntu 16.04</h1>
 
 **Bước 1:** update và cài đặt bind9
 
