@@ -1,10 +1,10 @@
 <h1>Báo cáo bài tập</h1>
 <h2>I, DHCP</h2>
-###1, Định nghĩa
+<h3>1, Định nghĩa</h3>
 Dynamic Host Configuration Protocol (DHCP - giao thức cấu hình động máy chủ) là một giao thức cho phép cấp phát địa chỉ IP một cách tự động cùng với các cấu hình liên quan khác như subnet mark và gateway mặc định. Máy tính được cấu hình một cách tự động vì thế sẽ giảm việc can thiệp vào hệ thống mạng. Nó cung cấp một database trung tâm để theo dõi tất cả các máy tính trong hệ thống mạng. Mục đích quan trọng nhất là tránh trường hợp hai máy tính khác nhau lại có cùng địa chỉ IP.
-###2, Nguyên tắc hoạt động
+<h3>2, Nguyên tắc hoạt động</h3>
 DHCP là một giao thức Internet có nguồn gốc ở BOOTP (bootstrap protocol), được dùng để cấu hình các Clients không đĩa. DHCP khai thác ưu điểm của giao thức truyền tin và các kỹ thuật khai báo cấu hình được định nghĩa trong BOOTP, trong đó có khả năng gán địa chỉ. Sự tương tự này cũng cho phép các bộ định tuyến hiện nay chuyển tiếp các thông điệp BOOTP giữa các mạng con cũng có thể chuyển tiếp các thông điệp DHCP. Vì thế, DHCP Server có thể đánh địa chỉ IP cho nhiều mạng con.
-###3, Các bước hoạt động
+<h3>3, Các bước hoạt động</h3>
 <p align="center"> ![](/home/cuong/Downloads/dhcp_process_explained.jpg) </p>
 *
 **Bước 1:** Máy trạm khởi động với “địa chỉ IP rỗng” cho phép liên lạc với DHCP Servers bằng giao thức TCP/IP. Nó broadcast một thông điệp DHCP Discover chứa địa chỉ MAC và tên máy tính để tìm DHCP Server .
