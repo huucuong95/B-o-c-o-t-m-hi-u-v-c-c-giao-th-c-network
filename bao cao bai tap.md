@@ -56,7 +56,7 @@
   <p>
   </p>
   <p align="center">
-   <img alt="" src="/home/cuong/Pictures/Selection_013.png"/>
+   <img alt="" src="https://github.com/huucuong95/B-o-c-o-t-m-hi-u-v-c-c-giao-th-c-network/blob/master/Selection_013.png"/>
   </p>
   <h3 id="5-cau-hinh">
    5, Cấu hình
@@ -154,7 +154,7 @@
   <p>
   </p>
   <p align="center">
-   <img alt="" src="/home/cuong/Downloads/Recursive.jpg"/>
+   <img alt="" src="https://github.com/huucuong95/B-o-c-o-t-m-hi-u-v-c-c-giao-th-c-network/blob/master/Recursive.jpg"/>
   </p>
   <p>
    1, Client yêu cầu máy chủ DNS cục bộ ‘dns.sjsu.edu’ để tìm kiếm một truy vấn DNS
@@ -198,7 +198,7 @@
   <p>
   </p>
   <p align="center">
-   <img alt="" src="/home/cuong/Pictures/Selection_020.png"/>
+   <img alt="" src="https://github.com/huucuong95/B-o-c-o-t-m-hi-u-v-c-c-giao-th-c-network/blob/master/Selection_020.png"/>
   </p>
   <h3 id="5-cau-hinh_1">
    5, Cấu hình
@@ -220,17 +220,17 @@
     <br/>
     )
     <br/>
-    <img alt="" src="/home/cuong/Pictures/Selection_024.png"/>
+    <img alt="" src="https://github.com/huucuong95/B-o-c-o-t-m-hi-u-v-c-c-giao-th-c-network/blob/master/Selection_024.png"/>
    </li>
    <li>
     Cấu hình phân giải thuận file /var/named/chroot/var/named/huucuong.vn:
     <br/>
-    <img alt="" src="/home/cuong/Pictures/Selection_025.png"/>
+    <img alt="" src="https://github.com/huucuong95/B-o-c-o-t-m-hi-u-v-c-c-giao-th-c-network/blob/master/Selection_025.png"/>
    </li>
    <li>
     Cấu hình file phân giải nghịch /var/named/chroot/var/named/20.168.192.in-addr.arpa.db
     <br/>
-    <img alt="" src="/home/cuong/Pictures/Selection_026.png"/>
+    <img alt="" src="https://github.com/huucuong95/B-o-c-o-t-m-hi-u-v-c-c-giao-th-c-network/blob/master/Selection_026.png"/>
    </li>
   </ul>
   <h2 id="iii-arp">
@@ -270,7 +270,7 @@
   <p>
   </p>
   <p align="center">
-   <img alt="" src="/home/cuong/Pictures/Selection_016.png"/>
+   <img alt="" src="https://github.com/huucuong95/B-o-c-o-t-m-hi-u-v-c-c-giao-th-c-network/blob/master/Selection_016.png"/>
   </p>
   <br/>
   <strong>
@@ -279,7 +279,7 @@
   máy A gửi ARP Request để hỏi xem máy nào có địa chỉ IP là x.x.x.x gửi theo kiểu Broadcast tới các máy trong mạng địa chỉ MAC đích là FF:FF:FF:FF:FF:FF
   <br/>
   <p align="center">
-   <img alt="" src="/home/cuong/Pictures/Selection_017.png"/>
+   <img alt="" src="https://github.com/huucuong95/B-o-c-o-t-m-hi-u-v-c-c-giao-th-c-network/blob/master/Selection_017.png"/>
   </p>
   <br/>
   <strong>
@@ -297,7 +297,7 @@
   <p>
   </p>
   <p align="center">
-   <img alt="" src="/home/cuong/Pictures/Selection_018.png"/>
+   <img alt="" src="https://github.com/huucuong95/B-o-c-o-t-m-hi-u-v-c-c-giao-th-c-network/blob/master/Selection_018.png"/>
   </p>
   <br/>
   <strong>
@@ -374,7 +374,7 @@
   <p>
   </p>
   <p align="center">
-   <img alt="" src="/home/cuong/Pictures/GRE.jpg"/>
+   <img alt="" src="https://github.com/huucuong95/B-o-c-o-t-m-hi-u-v-c-c-giao-th-c-network/blob/master/GRE.jpg"/>
   </p>
   <h3 id="5-cau-hinh_2">
    5, Cấu hình
@@ -485,7 +485,7 @@
   <p>
   </p>
   <p align="center">
-   <img alt="" src="/home/cuong/Pictures/Selection_022.png"/>
+   <img alt="" src="https://github.com/huucuong95/B-o-c-o-t-m-hi-u-v-c-c-giao-th-c-network/blob/master/Selection_022.png"/>
   </p>
   <h3 id="5-cau-hinh_3">
    5, Cấu hình
