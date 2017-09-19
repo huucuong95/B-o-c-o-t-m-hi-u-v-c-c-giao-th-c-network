@@ -24,7 +24,7 @@
   <p>
   </p>
   <p align="center">
-   <img alt="" src="https://drive.google.com/open?id=0B60i0P80zMKdbWZYS3pXSnpHMlU"/>
+   <img src="https://drive.google.com/open?id=0B60i0P80zMKdbWZYS3pXSnpHMlU">
   </p>
   <br/>
   <em>
