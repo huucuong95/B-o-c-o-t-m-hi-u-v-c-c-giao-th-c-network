@@ -24,7 +24,7 @@
   <p>
   </p>
   <p align="center">
-   <img src="https://drive.google.com/open?id=0B60i0P80zMKdbWZYS3pXSnpHMlU">
+   <img src="https://github.com/huucuong95/B-o-c-o-t-m-hi-u-v-c-c-giao-th-c-network/blob/master/dhcp_process_explained.jpg">
   </p>
   <br/>
   <em>
