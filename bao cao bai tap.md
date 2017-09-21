@@ -374,44 +374,72 @@
   <p>
   </p>
   <p align="center">
-   <img alt="" src="https://raw.githubusercontent.com/huucuong95/B-o-c-o-t-m-hi-u-v-c-c-giao-th-c-network/master/Selection_001.bmp"/>
+   <img alt="" src="https://raw.githubusercontent.com/huucuong95/B-o-c-o-t-m-hi-u-v-c-c-giao-th-c-network/master/Selection_002.bmp"/>
   </p>
   <h3 id="5-cau-hinh_2">
    5, Cấu hình
   </h3>
-  <ul>
-   <li>
-    Router 1
-    <br/>
-    R1(config)# interface Tunnel1
-    <br/>
-    R1(config-if)# ip address 172.16.1.1 255.255.255.0
-    <br/>
-    R1(config-if)# ip mtu 1400
-    <br/>
-    R1(config-if)# ip tcp adjust-mss 1360
-    <br/>
-    R1(config-if)# tunnel source 1.1.1.1
-    <br/>
-    R1(config-if)# tunnel destination 2.2.2.2
-   </li>
-   <li>
-    Router 2
-    <br/>
-    R2(config)# interface Tunnel1
-    <br/>
-    R2(config-if)# ip address 172.16.1.2 255.255.255.0
-    <br/>
-    R2(config-if)# ip mtu 1400
-    <br/>
-    R2(config-if)# ip tcp adjust-mss 1360
-    <br/>
-    R2(config-if)# tunnel source 2.2.2.2
-    <br/>
-    R2(config-if)# tunnel destination 1.1.1.1
-   </li>
-  </ul>
-  <h3 id="v-vxlan">
+  Bước 1: Cấu hình địa chỉ như mô hình ở trên
+Bước 2: Cấu hình GRE trên các Router
+Router 1:
+modprobe ip_gre
+sudo ip tunnel add gre1 mode gre remote 10.0.0.129 local 10.0.0.128 ttl 255
+sudo ip link set gre1 up
+ip addr add 20.0.0.1/24 dev gre1
+Router 2:
+modprobe ip_gre
+sudo ip tunnel add gre1 mode gre remote 10.0.0.129 local 10.0.0.128 ttl 255
+sudo ip link set gre1 up
+ip addr add 20.0.0.1/24 dev gre1
+Mở cở chế forward trên 2 router **echo 1 > /proc/sys/net/ipv4/ip_forward**
+
+Cấu hình đinh tuyến trên các thiết bị theo thứ tự
+COM-1
+- Cấu hình định tuyến vào IP GRE TUNNEL và IP LAN của router 2
+```ip router add 20.0.0.0/24 via 172.16.137.129 dev ens37```
+```ip route add 192.168.42.0/24 via 172.16.137.129 dev ens37```
+
+Kết qua ta có bảng định tuyến sau
+![](https://github.com/kidluc/NETWORKREPORT/blob/master/Screenshot%20from%202017-09-21%2015-43-52.png)
+
+COM-2
+- Cấu hình định tuyến vào IP GRE TUNNEL và IP LAN của router 1
+```
+ip router add 20.0.0.0/24 via 192.168.42.128 dev ens33
+ip route add 172.16.137.0/24 via 192.168.42.128 dev ens33
+```
+Kết qua ta có bảng định tuyến sau
+![](https://github.com/kidluc/NETWORKREPORT/blob/master/Screenshot%20from%202017-09-21%2015-45-07.png)
+
+ROUTER-1
+- Cấu hình định tuyến vào IP LAN của ROUTER-2
+```
+ip route add 192.168.42.0/24 via 20.0.0.2 dev gre1
+```
+Bảng định tuyến của router-1
+![](https://github.com/kidluc/NETWORKREPORT/blob/master/Screenshot%20from%202017-09-21%2015-44-04.png)
+ROUTER-2
+
+- Cấu hình định tuyến vào IP LAN của ROUTER-1
+```
+ip route add 172.16.137.0/24 via 20.0.0.1 dev gre1
+```
+Bảng định tuyến của router-2
+![](https://github.com/kidluc/NETWORKREPORT/blob/master/Screenshot%20from%202017-09-21%2015-44-11.png)
+
+
+Sau khi cài đặt, ta có thể ping giữa COM-1 và COM-2 hoặc SSH.
+PING COM-1 và COM-2
+![](https://github.com/kidluc/NETWORKREPORT/blob/master/Screenshot%20from%202017-09-21%2015-42-28.png)
+![](https://github.com/kidluc/NETWORKREPORT/blob/master/Screenshot%20from%202017-09-21%2016-10-09.png)
+
+TCPDUMP trên 2 router SSH qua GRE Tunnel
+![](https://github.com/kidluc/NETWORKREPORT/blob/master/Screenshot%20from%202017-09-21%2016-57-08.png)
+![](https://github.com/kidluc/NETWORKREPORT/blob/master/Screenshot%20from%202017-09-21%2016-57-29.png)
+
+SSH
+![](https://github.com/kidluc/NETWORKREPORT/blob/master/Screenshot%20from%202017-09-21%2016-22-03.png)
+  <h3 id="v-vxlan">
    V, VXLAN
   </h3>
   <h3 id="1-inh-nghia_4">
