@@ -398,6 +398,7 @@ ip addr add 20.0.0.1/24 dev gre1
 Mở cở chế forward trên 2 router **echo 1 > /proc/sys/net/ipv4/ip_forward**
 ```
 <p>Bước 3: Cấu hình đinh tuyến trên các thiết bị theo thứ tự<p>
+
 COM 1
 - Cấu hình định tuyến vào IP GRE TUNNEL và IP LAN của router 2
 
