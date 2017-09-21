@@ -374,7 +374,7 @@
   <p>
   </p>
   <p align="center">
-   <img alt="" src="https://github.com/huucuong95/B-o-c-o-t-m-hi-u-v-c-c-giao-th-c-network/blob/master/GRE.jpg"/>
+   <img alt="" src="https://raw.githubusercontent.com/huucuong95/B-o-c-o-t-m-hi-u-v-c-c-giao-th-c-network/master/Selection_001.bmp"/>
   </p>
   <h3 id="5-cau-hinh_2">
    5, Cấu hình
