@@ -379,25 +379,30 @@
   <h3 id="5-cau-hinh_2">
    5, Cấu hình
   </h3>
-  Bước 1: Cấu hình địa chỉ như mô hình ở trên
-Bước 2: Cấu hình GRE trên các Router
+<p>Bước 1: Cấu hình địa chỉ như mô hình ở trên</p>
+<p>Bước 2: Cấu hình GRE trên các Router</p>
 Router 1:
+```
 modprobe ip_gre
 sudo ip tunnel add gre1 mode gre remote 10.0.0.129 local 10.0.0.128 ttl 255
 sudo ip link set gre1 up
 ip addr add 20.0.0.1/24 dev gre1
+```
 Router 2:
+```
 modprobe ip_gre
 sudo ip tunnel add gre1 mode gre remote 10.0.0.129 local 10.0.0.128 ttl 255
 sudo ip link set gre1 up
 ip addr add 20.0.0.1/24 dev gre1
 Mở cở chế forward trên 2 router **echo 1 > /proc/sys/net/ipv4/ip_forward**
-
-Cấu hình đinh tuyến trên các thiết bị theo thứ tự
+```
+Bước 3: Cấu hình đinh tuyến trên các thiết bị theo thứ tự
 COM-1
 - Cấu hình định tuyến vào IP GRE TUNNEL và IP LAN của router 2
-```ip router add 20.0.0.0/24 via 172.16.137.129 dev ens37```
-```ip route add 192.168.42.0/24 via 172.16.137.129 dev ens37```
+```
+  ip router add 20.0.0.0/24 via 172.16.137.129 dev ens37
+ip route add 192.168.42.0/24 via 172.16.137.129 dev ens37
+  ```
 
 Kết qua ta có bảng định tuyến sau
 ![](https://github.com/kidluc/NETWORKREPORT/blob/master/Screenshot%20from%202017-09-21%2015-43-52.png)
