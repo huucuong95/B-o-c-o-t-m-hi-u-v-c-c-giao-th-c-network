@@ -426,18 +426,20 @@ ip route add 192.168.42.0/24 via 20.0.0.2 dev gre1
 ```
 Bảng định tuyến của router-1
 ![](https://github.com/kidluc/NETWORKREPORT/blob/master/Screenshot%20from%202017-09-21%2015-44-04.png)
+
 ROUTER-2
 
 - Cấu hình định tuyến vào IP LAN của ROUTER-1
 ```
 ip route add 172.16.137.0/24 via 20.0.0.1 dev gre1
 ```
+
 Bảng định tuyến của router-2
 ![](https://github.com/kidluc/NETWORKREPORT/blob/master/Screenshot%20from%202017-09-21%2015-44-11.png)
 
 
 Sau khi cài đặt, ta có thể ping giữa COM-1 và COM-2 hoặc SSH.
-PING COM-1 và COM-2
+PING COM 1 và COM 2
 ![](https://github.com/kidluc/NETWORKREPORT/blob/master/Screenshot%20from%202017-09-21%2015-42-28.png)
 ![](https://github.com/kidluc/NETWORKREPORT/blob/master/Screenshot%20from%202017-09-21%2016-10-09.png)
 
