@@ -528,7 +528,61 @@ SSH
   <h3 id="5-cau-hinh_3">
    5, Cấu hình
   </h3>
-  
+Tương tự như cấu hình GRE ở trên
+Đầu tiên cần tạo VXLAN trên 2 Router để kết nối 2 mạng LAN của 2 ROUTER với nhau.
+Mở cơ chế forward trên 2 router **echo 1 > /proc/sys/net/ipv4/ip_forward** trên cả 2 router.
+
+ROUTER-1
+Ta tạo interface vxlan0 với IP là 30.0.0.1
+```
+ip link add vxlan0 type vxlan id 100 dev ens33 local 10.0.0.128 remote 10.0.0.129 ttl 255 dstport 4789
+ip link set vxlan0 up
+ip addr add 30.0.0.1/24 dev vxlan0
+```
+Kiểm tra vxlan đã hoạt động chưa.
+![](https://github.com/kidluc/NETWORKREPORT/blob/master/Screenshot%20from%202017-09-22%2007-51-09.png)
+
+Cấu hình bảng định tuyến của router 1 để kết nối với COM-2 qua VXLAN.
+```
+ip route add 192.168.42.0/24 via 30.0.0.2 dev vxlan0
+```
+![](https://github.com/kidluc/NETWORKREPORT/blob/master/Screenshot%20from%202017-09-22%2007-54-25.png)
+
+ROUTER-2
+```
+ip link add vxlan0 type vxlan id 100 dev ens33 local 10.0.0.129 remote 10.0.0.128 ttl 255 dstport 4789
+ip link set vxlan0 up
+ip addr add 30.0.0.2/24 dev vxlan0
+```
+Kiểm tra vxlan đã hoạt động chưa.
+![](https://github.com/kidluc/NETWORKREPORT/blob/master/Screenshot%20from%202017-09-22%2007-51-33.png)
+
+Cấu hình bảng định tuyến của router 2 để kết nối với COM-1 qua VXLAN.
+```
+ip route add 172.16.137.0/24 via 30.0.0.1 dev vxlan0
+```
+![](https://github.com/kidluc/NETWORKREPORT/blob/master/Screenshot%20from%202017-09-22%2007-55-28.png)
+
+COM-1:
+Ta cấu hình bảng định tuyến cho COM-1 kết nối đến ROUTER-2 và COM-1 đến COM-2 qua VXLAN
+```
+ip route add 30.0.0.0/24 via 172.16.137.129 dev ens37
+ip route add 192.168.42.0/24 via 172.16.137.129 dev ens37
+```
+![](https://github.com/kidluc/NETWORKREPORT/blob/master/Screenshot%20from%202017-09-22%2008-12-48.png)
+
+COM-2:
+Ta cấu hình bảng định tuyến cho COM-2 kết nối đến ROUTER-1 qua VXLAN
+```
+ip route add 30.0.0.0/24 via 192.168.42.128 dev ens33
+ip route add 172.16.137.0/24 via 192.168.42.128 dev ens33
+```
+![](https://github.com/kidluc/NETWORKREPORT/blob/master/Screenshot%20from%202017-09-22%2008-13-14.png)
+Sau khi cấu hình ta có thể ping được từ COM-1 đến COM-2 qua VXLAN cũng như có thể SSH qua VXLAN.
+![](https://github.com/kidluc/NETWORKREPORT/blob/master/Screenshot%20from%202017-09-22%2008-04-00.png)
+`tcpdump -i vxlan0` trên Router1
+![](https://github.com/kidluc/NETWORKREPORT/blob/master/Screenshot%20from%202017-09-22%2008-05-16.png)
+
   <h2 id="vi-icmp">
    VI, ICMP
   </h2>
