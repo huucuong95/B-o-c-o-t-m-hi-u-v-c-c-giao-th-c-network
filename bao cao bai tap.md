@@ -429,7 +429,7 @@ Bảng định tuyến của Router 1
 
 Router 2
 
-- Cấu hình định tuyến vào IP LAN của ROUTER-1
+- Cấu hình định tuyến vào IP LAN của Router 1
 ```
 ip route add 172.16.137.0/24 via 20.0.0.1 dev gre1
 ```
@@ -438,7 +438,7 @@ Bảng định tuyến của Router 2
 ![](https://github.com/kidluc/NETWORKREPORT/blob/master/Screenshot%20from%202017-09-21%2015-44-11.png)
 
 
-Sau khi cài đặt, ta có thể ping giữa COM-1 và COM-2 hoặc SSH.
+Sau khi cài đặt, ta có thể ping giữa COM 1 và COM 2 hoặc SSH.
 PING COM 1 và COM 2
 ![](https://github.com/kidluc/NETWORKREPORT/blob/master/Screenshot%20from%202017-09-21%2015-42-28.png)
 ![](https://github.com/kidluc/NETWORKREPORT/blob/master/Screenshot%20from%202017-09-21%2016-10-09.png)
@@ -557,14 +557,14 @@ ip addr add 30.0.0.2/24 dev vxlan0
 Kiểm tra vxlan đã hoạt động chưa.
 ![](https://github.com/kidluc/NETWORKREPORT/blob/master/Screenshot%20from%202017-09-22%2007-51-33.png)
 
-Cấu hình bảng định tuyến của router 2 để kết nối với COM-1 qua VXLAN.
+Cấu hình bảng định tuyến của Router 2 để kết nối với COM 1 qua VXLAN.
 ```
 ip route add 172.16.137.0/24 via 30.0.0.1 dev vxlan0
 ```
 ![](https://github.com/kidluc/NETWORKREPORT/blob/master/Screenshot%20from%202017-09-22%2007-55-28.png)
 
 COM 1:
-Ta cấu hình bảng định tuyến cho COM-1 kết nối đến ROUTER-2 và COM-1 đến COM-2 qua VXLAN
+Ta cấu hình bảng định tuyến cho COM 1 kết nối đến Router 2 và COM 1 đến COM 2 qua VXLAN
 ```
 ip route add 30.0.0.0/24 via 172.16.137.129 dev ens37
 ip route add 192.168.42.0/24 via 172.16.137.129 dev ens37
@@ -572,7 +572,7 @@ ip route add 192.168.42.0/24 via 172.16.137.129 dev ens37
 ![](https://github.com/kidluc/NETWORKREPORT/blob/master/Screenshot%20from%202017-09-22%2008-12-48.png)
 
 COM 2:
-Ta cấu hình bảng định tuyến cho COM-2 kết nối đến ROUTER-1 qua VXLAN
+Ta cấu hình bảng định tuyến cho COM 2 kết nối đến Router 1 qua VXLAN
 ```
 ip route add 30.0.0.0/24 via 192.168.42.128 dev ens33
 ip route add 172.16.137.0/24 via 192.168.42.128 dev ens33
